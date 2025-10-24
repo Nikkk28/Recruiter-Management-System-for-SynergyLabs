@@ -60,7 +60,7 @@ public class JobController {
 
             // Add applicant to job
             job.getApplicants().add(applicant);
-            job.setTotalApplications(job.getApplicants().size());
+            job.setTotalApplicants(job.getApplicants().size());
             jobRepository.save(job);
 
             return ResponseEntity.ok(new ApiResponse(true,

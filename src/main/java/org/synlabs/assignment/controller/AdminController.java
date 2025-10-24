@@ -17,6 +17,7 @@ import org.synlabs.assignment.repository.ProfileRepository;
 import org.synlabs.assignment.repository.UserRepository;
 import org.synlabs.assignment.security.UserDetailsImpl;
 
+import java.time.Instant;
 import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.List;
@@ -51,9 +52,9 @@ public class AdminController {
             job.setTitle(jobRequest.getTitle());
             job.setDescription(jobRequest.getDescription());
             job.setCompanyName(jobRequest.getCompanyName());
-            job.setPostedOn(LocalDateTime.now());
+            job.setPostedOn(Instant.from(LocalDateTime.now()));
             job.setPostedBy(admin);
-            job.setTotalApplications(0);
+            job.setTotalApplicants(0);
 
             jobRepository.save(job);
 
@@ -79,7 +80,7 @@ public class AdminController {
             response.put("description", job.getDescription());
             response.put("companyName", job.getCompanyName());
             response.put("postedOn", job.getPostedOn());
-            response.put("totalApplications", job.getTotalApplications());
+            response.put("totalApplications", job.getTotalApplicants());
             response.put("postedBy", Map.of(
                     "id", job.getPostedBy().getId(),
                     "name", job.getPostedBy().getName(),
