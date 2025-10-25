@@ -12,7 +12,7 @@ A Spring Boot REST API application for managing job postings and applications wi
 
 ## Tech Stack
 
-- **Backend**: Spring Boot 3.x, Spring Security
+- **Backend**: Spring Boot, Spring Security
 - **Database**: PostgreSQL
 - **Authentication**: JWT (JSON Web Tokens)
 - **Password Encryption**: BCrypt
