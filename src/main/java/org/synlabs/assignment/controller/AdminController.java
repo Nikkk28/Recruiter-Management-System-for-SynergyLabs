@@ -52,7 +52,7 @@ public class AdminController {
             job.setTitle(jobRequest.getTitle());
             job.setDescription(jobRequest.getDescription());
             job.setCompanyName(jobRequest.getCompanyName());
-            job.setPostedOn(Instant.from(LocalDateTime.now()));
+            job.setPostedOn(Instant.now());
             job.setPostedBy(admin);
             job.setTotalApplicants(0);
 
